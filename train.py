@@ -61,7 +61,7 @@ print("model is successfully saved as model.pkl!")
 
 # final model accuracy
 final_acc = accuracy(model, test_images, test_labels)
-print(f"test accuracy: {final_acc * 100:.3f}%")
+print(f"\nFINAL_TEST_ACCURACY: {final_acc * 100:.3f}%")
 
 # visualizations
 def show_predictions(model, X, y, num=5):
