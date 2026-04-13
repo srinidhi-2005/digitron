@@ -3,13 +3,17 @@
 import pickle
 import numpy as np
 
-def load_model():
-    with open("model.pkl", "rb") as f:
-        return pickle.load(f)
+model = None # global variable
 
-model = load_model()  # load once with fast API
+def load_model():
+    global model
+    if model is None:
+        with open("model.pkl", "rb") as f:
+            model = pickle.load(f)
+    return model
 
 def predict(image):
+    model = load_model()
     output = model.forward(image)
     return int(np.argmax(output, axis=1)[0])
 
