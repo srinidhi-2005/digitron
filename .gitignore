@@ -3,4 +3,5 @@ __pycache__/
 model.pkl
 .env
 .ipynb_checkpoints/
+handwritten_digit.ipynb
 
